@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../../../core/constants/app_constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_constants.dart';
 import '../../../providers/auth_provider.dart';
 import '../../../providers/user_profile_provider.dart';
 
@@ -25,15 +29,100 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         setState(() {
           _notificationsEnabled = s['notificationsEnabled'] as bool? ?? true;
           _loaded = true;
-        });
+        }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
       }
-    });
+    }
+  });
+      }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  }
+    }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  });
+  }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
   }
 
   Future<void> _saveSettings() async {
     await ref.read(userProfileProvider.notifier).updateSettings({
       'notificationsEnabled': _notificationsEnabled
-    });
+    }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  });
+  }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  }
+
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
   }
 
   @override
@@ -51,6 +140,18 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         );
         ref.read(userProfileProvider.notifier).clearMessages();
       }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  }
       if (next.error != null) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -59,7 +160,31 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         );
         ref.read(userProfileProvider.notifier).clearMessages();
       }
-    });
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  }
+    }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  });
 
     return Scaffold(
       backgroundColor: AppColors.darkBg,
@@ -116,7 +241,19 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                     onChanged: (v) {
                       setState(() => _notificationsEnabled = v);
                       _saveSettings();
-                    },
+                    }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  },
                   ),
                 ]),
                 const SizedBox(height: 20),
@@ -134,13 +271,13 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   _NavRow(
                     icon: Icons.privacy_tip_outlined,
                     label: 'Privacy policy',
-                    onTap: () {},
+                    onTap: () => _launchUrl(AppConstants.privacyPolicyUrl),
                   ),
                   const _Div(),
                   _NavRow(
                     icon: Icons.description_outlined,
                     label: 'Terms of service',
-                    onTap: () {},
+                    onTap: () => _launchUrl(AppConstants.termsOfServiceUrl),
                   ),
                 ]),
                 const SizedBox(height: 20),
@@ -167,6 +304,18 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     );
   }
 
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  }
+
   void _confirmLogout(BuildContext context) {
     _confirmDialog(
       context,
@@ -176,6 +325,18 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       confirmColor: AppColors.warning,
       onConfirm: () => ref.read(authProvider.notifier).logout(),
     );
+  }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
   }
 
   void _confirmDelete(BuildContext context) {
@@ -191,6 +352,18 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     );
   }
 
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  }
+
   void _confirmDialog(
     BuildContext context, {
     required String title,
@@ -198,6 +371,18 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     required String confirmLabel,
     required Color confirmColor,
     required VoidCallback onConfirm,
+  }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
   }) {
     showDialog(
       context: context,
@@ -222,7 +407,19 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             onPressed: () {
               Navigator.pop(context);
               onConfirm();
-            },
+            }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  },
             child: Text(confirmLabel,
                 style: TextStyle(
                     color: confirmColor, fontWeight: FontWeight.w700)),
@@ -230,6 +427,18 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         ],
       ),
     );
+  }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
   }
 }
 
@@ -249,6 +458,18 @@ class _SectionLabel extends StatelessWidget {
               letterSpacing: 0.8)),
     );
   }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  }
 }
 
 class _SettingsCard extends StatelessWidget {
@@ -265,6 +486,18 @@ class _SettingsCard extends StatelessWidget {
       ),
       child: Column(children: children),
     );
+  }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
   }
 }
 
@@ -290,6 +523,18 @@ class _InfoRow extends StatelessWidget {
       ),
     );
   }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  }
 }
 
 class _ToggleRow extends StatelessWidget {
@@ -300,6 +545,18 @@ class _ToggleRow extends StatelessWidget {
     required this.value,
     required this.color,
     required this.onChanged,
+  }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
   });
 
   final IconData icon;
@@ -338,6 +595,18 @@ class _ToggleRow extends StatelessWidget {
       ),
     );
   }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
+  }
 }
 
 class _NavRow extends StatelessWidget {
@@ -347,6 +616,18 @@ class _NavRow extends StatelessWidget {
     required this.onTap,
     this.trailing,
     this.color,
+  }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
   });
 
   final IconData icon;
@@ -385,6 +666,18 @@ class _NavRow extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _launchUrl(String urlString) async {
+    final uri = Uri.tryParse(urlString);
+    if (uri != null) {
+      final success = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $urlString')),
+        );
+      }
+    }
   }
 }
 

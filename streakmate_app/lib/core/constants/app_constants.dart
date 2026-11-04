@@ -33,6 +33,20 @@ class AppConstants {
     'overall',
   ];
 
+  // ─── Legal / Play Store Compliance ────────────────────────────────────
+  static const String privacyPolicyUrl = String.fromEnvironment(
+    'PRIVACY_POLICY_URL',
+    defaultValue: 'https://zansphere.github.io/streak-mate/',
+  );
+  static const String termsOfServiceUrl = String.fromEnvironment(
+    'TERMS_URL',
+    defaultValue: 'https://zansphere.github.io/streak-mate/',
+  );
+  static const String accountDeletionUrl = String.fromEnvironment(
+    'ACCOUNT_DELETION_URL',
+    defaultValue: 'https://zansphere.github.io/streak-mate/',
+  );
+
   // ─── Validation ─────────────────────────────────────────────────────────
   static const int usernameMinLength = 3;
   static const int usernameMaxLength = 30;
