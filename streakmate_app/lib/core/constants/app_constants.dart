@@ -15,8 +15,8 @@ class AppConstants {
     defaultValue: 'https://streak-mate.onrender.com',
   );
 
-  static const Duration connectTimeout = Duration(seconds: 15);
-  static const Duration receiveTimeout = Duration(seconds: 15);
+  static const Duration connectTimeout = Duration(seconds: 45);
+  static const Duration receiveTimeout = Duration(seconds: 45);
 
   // ─── Secure storage keys ───────────────────────────────────────────────
   static const String keyAccessToken = 'access_token';
